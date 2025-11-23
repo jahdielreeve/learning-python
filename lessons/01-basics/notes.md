@@ -39,7 +39,7 @@ spam = "Hello"
 spam = "Goodbye"
 ```
 
-###🏷️ Variable Naming Rules
+### 🏷️ Variable Naming Rules
 ✔️ Valid Names
 
 - current_balance
