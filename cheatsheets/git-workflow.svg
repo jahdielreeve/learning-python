@@ -52,7 +52,7 @@
 
   <!-- Box 4 -->
   <rect class="box" x="540" y="400" width="450" height="170" />
-  <text class="title" x="560" y="425">4. Commit, push &amp; open PR</text>
+  <text class="title" x="560" y="425">4. Commit, push &amp; open Pull Request (PR)</text>
   <text class="cmd" x="560" y="455">git add .</text>
   <text class="cmd" x="560" y="475">git commit -m "your message"</text>
   <text class="cmd" x="560" y="495">git push origin my-feature-branch</text>
