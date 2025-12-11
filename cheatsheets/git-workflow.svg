@@ -1,0 +1,63 @@
+
+<svg width="1000" height="620" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill: #f9fafb; stroke: #9ca3af; stroke-width: 1.5; rx: 10; ry: 10; }
+    .title { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+             font-size: 15px; font-weight: 600; fill: #111827; }
+    .cmd { font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+           font-size: 12px; fill: #111827; }
+    .arrow { stroke: #6b7280; stroke-width: 1.5; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,4 L4,2 z" fill="#6b7280" />
+    </marker>
+  </defs>
+
+  <!-- Box 1 -->
+  <rect class="box" x="40" y="40" width="450" height="130" />
+  <text class="title" x="60" y="65">1. Clone your fork &amp; add upstream</text>
+  <text class="cmd" x="60" y="100">git clone https://github.com/&lt;you&gt;/&lt;repo&gt;.git</text>
+  <text class="cmd" x="60" y="120">cd &lt;repo&gt;</text>
+  <text class="cmd" x="60" y="140">git remote add upstream https://github.com/&lt;upstream&gt;/&lt;repo&gt;.git</text>
+
+  <!-- Arrow 1 -->
+  <line class="arrow" x1="265" y1="170" x2="265" y2="200" />
+
+  <!-- Box 2 -->
+  <rect class="box" x="40" y="200" width="450" height="170" />
+  <text class="title" x="60" y="225">2. Sync your main branch</text>
+  <text class="cmd" x="60" y="255">git fetch upstream</text>
+  <text class="cmd" x="60" y="275">git checkout main</text>
+  <text class="cmd" x="60" y="295">git merge upstream/main</text>
+  <text class="cmd" x="60" y="315"># or: git rebase upstream/main</text>
+  <text class="cmd" x="60" y="335">git push origin main</text>
+
+  <!-- Arrow 2 -->
+  <line class="arrow" x1="265" y1="370" x2="265" y2="400" />
+
+  <!-- Box 3 -->
+  <rect class="box" x="40" y="400" width="450" height="170" />
+  <text class="title" x="60" y="425">3. Create / update feature branch</text>
+  <text class="cmd" x="60" y="455"># first time</text>
+  <text class="cmd" x="60" y="475">git checkout -b my-feature-branch main</text>
+  <text class="cmd" x="60" y="495"># later updates</text>
+  <text class="cmd" x="60" y="515">git checkout my-feature-branch</text>
+  <text class="cmd" x="60" y="535">git merge main   # or: git rebase main</text>
+
+  <!-- Arrow from box 3 to box 4 -->
+  <line class="arrow" x1="490" y1="485" x2="540" y2="485" />
+
+  <!-- Box 4 -->
+  <rect class="box" x="540" y="400" width="450" height="170" />
+  <text class="title" x="560" y="425">4. Commit, push &amp; open Pull Request (PR)</text>
+  <text class="cmd" x="560" y="455">git add .</text>
+  <text class="cmd" x="560" y="475">git commit -m "your message"</text>
+  <text class="cmd" x="560" y="495">git push origin my-feature-branch</text>
+  <text class="cmd" x="560" y="515"># then open PR: your fork/my-feature-branch → upstream/main</text>
+
+  <!-- Small label -->
+  <text class="cmd" x="40" y="600">Flow: fork → clone → add upstream → sync main → branch → commit → push → PR</text>
+</svg>
